@@ -13,19 +13,18 @@ console.log('holiiii')
 //funciones
 
 function getRandomNumber(max) {
-    return Math.ceil(Math.random() * max);
+    
+    const numberRandom =  Math.ceil(Math.random() * max);
+    return numberRandom;
+
     }
-
+    function useRandomNumber() {
+    const userNumber = numberSelection.value; 
     const randomNumber= getRandomNumber(100);
-
-    const comparar =() =>{
-        
-    let inpValue = parseInt(inp.value);
-
         if (inp.value === RandomNumber) {
         clueEle.innerHTML = 'Has ganado campeona!!!';
 
-        } else if (inp.value <        RandomNumber &&  inpValue >0){
+        } else if (inp.value <  RandomNumber &&  inpValue >0){
         clueEle.innerHTML = 'Demasiado bajo';
 
         }else if (inp.value > RandomNumber && inpValue < 101){
@@ -33,19 +32,24 @@ function getRandomNumber(max) {
 
         }if(inpValue > 100 || inputValue < -1){
         clueEle.innerHTML = 'El número debe estar entre 1 y 100';
+        console
     }
     }
 
-    const triedEle = () =>{
-        conunt++;
-        triedEle.innerHTML = count;
-    }
+    const countAttemps = getRandomNumber(100);
+    let attempts = 1;
+    function trieEle() {
+        const totalTries = attempts++;
+
+        tryUser.innerHTML = `Número de intentos: ${totalTries}`;
+    } 
 
 //eventos
 
 function handleClickBtn(ev) {
     ev.preventDefault();
-    
+    useRandomNumber();
+    trieEle();
 }
 
 btn.addEventListener("click" , handleClickBtn)
