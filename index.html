@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/main.css">
     <title>Modulo 2 evaluación intermedia</title>
 </head>
-<body>
-    <main>
+<body class="page">
+    <main class="main">
         <h1 class="title">Adivina el número</h1>
-            <p class="number">Introduce aquí tu número:</p>
+            <p class="párrafo">Introduce aquí tu número:</p>
+        <form action="#" class="form">
+            <input type="text" class=" type js-type">
+            <input class="button js-bnt" type="button" value="Prueba" />
+            <input type="text" placeholder="Pista: escribe el número y dale a prueba" class="clue js-clue">
+            <input type="text" placeholder="Número de intentos" class="tried js-tried">
 
-            <input type="text">
-            <button class="btn"></button>
-            <input type="text">
-            <input type="text">
+        </form>
     </main>
     <script src="./js/main.js"></script>
 </body>
