@@ -25,8 +25,29 @@ function getRandomNumber(max) {
 
 const randomNumber = getRandomNumber(100);
 
+console.log(randomNumber); //funciona.
+
+//FUNCIONES
+
+function compareNumber() {
+  const numberEnterValue = parseInt(enterNumber.value);
+  if (numberEnterValue < 1 || numberEnterValue > 100) {
+    clueElement.innerHTML = "El número debe estar entre 1 y 100.";
+    //console.log(numberEnterValue); funciona
+  } else if (numberEnterValue > randomNumber) {
+    clueElement.innerHTML = "Demasiado alto, prueba de nuevo.";
+  } else if (numberEnterValue < randomNumber) {
+    clueElement.innerHTML = "Demasiado bajo, prueba de nuevo.";
+  }
+  if (numberEnterValue === randomNumber) {
+    clueElement.innerHTML = "Has acertado campeona!!!";
+  }
+}
+
 function handleclickbtn(ev) {
   ev.preventDefault();
+  compareNumber();
+  //console.log(compareNumber);
 }
 
 //EVENTOS
