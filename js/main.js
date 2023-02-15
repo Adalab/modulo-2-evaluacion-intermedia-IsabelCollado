@@ -48,12 +48,19 @@ function compareNumber() {
   }
 }
 //ME HA COSTADO BASTANTE Y NO SE COMO REALIZARLA EN CLASICA :(!!
-const increaseAttempts = (numberEnter) => {
+/*const increaseAttempts = (numberEnter) => {
   if (numberEnter !== randomNumber) {
     Attempts++;
     triesElement.innerHTML = Attempts;
   }
-};
+};*/
+
+function increaseAttempts(numberEnter) {
+  if (numberEnter !== randomNumber) {
+    Attempts++;
+    triesElement.innerHTML = Attempts;
+  }
+}
 
 function handleclickbtn(ev) {
   ev.preventDefault();
