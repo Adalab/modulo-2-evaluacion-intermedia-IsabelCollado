@@ -8,17 +8,18 @@
     <link rel="stylesheet" href="./css/main.css">
     <title>Evaluacion intermedia Modulo 2 Isabel Collado</title>
 </head>
-<body>
+<body class="body">
     <header class="header">
         <h1 class="title">Adivina el número</h1>
     </header>
     <main class="main">
-        <form action="">
+        <form action="#">
             <label for="enterNumber">Introduce aquí tu número:</label>
 
-            <input type="text" class="enterNumber js_enterNumber" name="enterNumber" id="enterNumber"/>
+            <input type="number" class="enterNumber js_enterNumber" name="enterNumber" placeholder="ej.37"/>
 
             <input type="submit" class="btn js_btn" value="Prueba"/>
+            <input type="submit" class="btn2 js_btn_reset" value="Reset"/>
         </form>
 
         <p class="clue js_clue">Pista: Escribe el número y dale a Prueba</p>
