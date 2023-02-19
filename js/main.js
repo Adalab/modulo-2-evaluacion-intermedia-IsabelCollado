@@ -21,6 +21,11 @@ function increaseAttempts(numberEnter) {
   }
 }
 
+function resetAttempts() {
+  attempts = 0;
+  triesElement.innerHTML = attempts;
+}
+
 function writeClueText(msj) {
   clueElement.innerHTML = msj;
 }
@@ -29,8 +34,9 @@ function compareNumber() {
   const numberEnterValue = parseInt(enterNumber.value);
 
   increaseAttempts(numberEnterValue);
+
   if (isNaN(numberEnterValue)) {
-    writeClueText("Introduce un número");
+    writeClueText("Para jugar debes introducir un número!!!");
   } else if (numberEnterValue < 1 || numberEnterValue > 100) {
     writeClueText("El número debe estar entre 1 y 100.");
   } else if (numberEnterValue > randomNumber) {
@@ -49,9 +55,11 @@ function handleClickBtn(ev) {
 
 function handleClicResetBtn(ev) {
   ev.preventDefault();
+  const number = getRandomNumber(100);
+  console.log(number);
   enterNumber.value = "";
-  triesElement.innerHTML = 0;
-  clueElement.innerHTML = "Pista: Escribe el número y dale a Prueba ";
+  writeClueText('Escribe un número nuevo y dale al botón "Prueba"');
+  resetAttempts();
 }
 
 btn.addEventListener("click", handleClickBtn);
