@@ -1,6 +1,6 @@
 "use strict";
 
-const enterNumber = document.querySelector(".js_enterNumber");
+const numInput = document.querySelector(".js_enterNumber");
 const btn = document.querySelector(".js_btn");
 const btnReset = document.querySelector(".js_btn_reset");
 const clueElement = document.querySelector(".js_clue");
@@ -31,19 +31,19 @@ function writeClueText(msj) {
 }
 
 function compareNumber() {
-  const numberEnterValue = parseInt(enterNumber.value);
+  const numInputValue = parseInt(numInput.value);
 
-  increaseAttempts(numberEnterValue);
+  increaseAttempts(numInputValue);
 
-  if (isNaN(numberEnterValue)) {
+  if (isNaN(numInputValue)) {
     writeClueText("Para jugar debes introducir un número!!!");
-  } else if (numberEnterValue < 1 || numberEnterValue > 100) {
+  } else if (numInputValue < 1 || numInputValue > 100) {
     writeClueText("El número debe estar entre 1 y 100.");
-  } else if (numberEnterValue > randomNumber) {
+  } else if (numInputValue > randomNumber) {
     writeClueText("Demasiado alto, prueba de nuevo.");
-  } else if (numberEnterValue < randomNumber) {
+  } else if (numInputValue < randomNumber) {
     writeClueText("Demasiado bajo, prueba de nuevo.");
-  } else if (numberEnterValue === randomNumber) {
+  } else if (numInputValue === randomNumber) {
     writeClueText("Has acertado campeona!!!");
   }
 }
@@ -57,7 +57,7 @@ function handleClicResetBtn(ev) {
   ev.preventDefault();
   const number = getRandomNumber(100);
   console.log(number);
-  enterNumber.value = "";
+  numInput.value = "";
   writeClueText('Escribe un número nuevo y dale al botón "Prueba"');
   resetAttempts();
 }
